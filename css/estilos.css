@@ -1,0 +1,157 @@
+html {
+    box-sizing: border-box; 
+    /* Computa el ancho y el alto de los elementos 
+    con margin y el border (Como que te encuadra el margin, pading
+    left y el rigth*/
+}
+
+html {
+    font-size: 62.5%; /*Esto hace que 1 rem equivale a prox a 10px */
+}
+
+.nombre-sitio span {
+    color: #037bc0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+/*menu-principal*/
+#menu-principal a {
+    display: block; /* Etiqueta en bloque se ponen debajo pero las cambiamos para a*/
+    text-decoration: none; /* Quitamos subrayado*/
+    padding: 2rem; /*Espacio interno entre el contenido de un elemento (como texto o imagen)*/
+    font-size: 1.5rem;
+    color: black;
+
+}
+
+#menu-principal {
+    display: flex; /*Coloca los elementos en linea*/
+    justify-content: space-evenly; /*A diferencia de space-between (que no deja espacio a los extremos) o space-around (que deja la mitad del espacio en los extremos), space-evenly deja el mismo espacio en todos lados*/
+    border-top: 0.2rem solid rgba(126, 147, 154, 0.568); /*Ponemos linea abajo*/
+    border-bottom: 0.2rem solid rgba(126, 147, 154, 0.568);/*Ponemos linea arriba*/
+    
+
+
+}
+
+.central {
+    max-width: 120rem;
+    margin: 0 auto; /*Ariba abajo 0 Derecha izquierda repartido*/
+}
+
+#portada {
+    background-image: url(../img/principal.jpg); /*salimos de css con los dos puntos, salimos a la raiz y selecionamos*/
+    background-repeat: no-repeat; /*fuerza que la imagen no se repita*/
+    background-position: center center; /*centramos imagen arrriba abajo derecha izquierda*/
+    height: 50rem;
+    margin-top: 2rem;
+    background-size: cover;
+
+}
+
+
+.listado-categorias {  /*El padre DIV*/
+    display: flex;
+    gap: 2rem;
+    }
+
+
+.categoria a {        /* Los hijos del DIV*/
+    text-align: center; /* Alinea texto */
+    display:block; /*Convierte la etiqueta de texto en bloque se pone debajo*/
+    font-size: 2rem; /*Tamaño fuente*/
+    text-decoration:none; /*Quitamos linea del enlace*/
+    padding: 2rem;
+}
+
+.categoria a:hover {  /* La pseudoclase :hover en CSS se utiliza para aplicar estilos cuando el usuario pasa el cursor (ratón) sobre un elemento*/
+    background-color: #037bc0;
+    color: white;
+    border-bottom-right-radius: 1rem ; /*maqueta los bordes y los hace redondeados abajo en la derecha*/
+    border-bottom-left-radius: 1rem ;  /*maqueta los bordes y los hace redondeados abajo en la izquierda*/
+
+}
+
+/*Nosotros*/
+#nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Fraccionamos en dos columnas*/
+    
+    
+}
+
+#nosotros img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.nosotros-fondo {
+    background-color: #037bc0; /*color de fondo*/
+    /*grid-column-start: 2;*/ 
+    
+}
+
+.texto-nosotros {
+    padding: 6rem;
+    color: white; /*Color del texto*/ 
+    font-size: 2rem;
+}
+
+.texto-nosotros h2 {
+    margin-bottom: 4rem;
+    text-align: left;
+}
+
+.texto-nosotros p {
+    padding-right: 4rem;
+}
+
+/*Productos*/
+.texto-producto {
+    background-color: #037bc0;
+    color: white;
+    padding: 2rem;
+}
+
+.precio {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+img {
+    display: block; /* Quitamos el espaciado entre la img y el boton enlace*/
+    max-width: 100%; /* Fuerza a todo el ancho de su padre que es portada*/
+}
+
+@media (width < 400px) { /*Esta media query activa los estilos que hay dentro cuando
+    se cumple la condicion, en este caso que el ancho de pantalla inferior a 400px*/
+    .listado-categorias {
+        flex-wrap: wrap;
+    }
+    .categoria {
+        width: 100%;
+    }
+    #nosotros {
+        grid-template-columns: 1fr;
+    }
+    #nosotros img {
+        display: none;
+    }
+}
+
+
+
+
