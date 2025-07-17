@@ -31,8 +31,9 @@ h2 {
     display: block; /* Etiqueta en bloque se ponen debajo pero las cambiamos para a*/
     text-decoration: none; /* Quitamos subrayado*/
     padding: 2rem; /*Espacio interno entre el contenido de un elemento (como texto o imagen)*/
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: black;
+   
 
 }
 
@@ -87,7 +88,8 @@ h2 {
 /*Nosotros*/
 #nosotros {
     display: grid;
-    grid-template-columns: 1fr 1fr; /*Fraccionamos en dos columnas*/
+    grid-template-columns: 1fr 1fr;
+     /*Fraccionamos en dos columnas*/
     
     
 }
@@ -99,7 +101,8 @@ h2 {
 
 .nosotros-fondo {
     background-color: #037bc0; /*color de fondo*/
-    /*grid-column-start: 2;*/ 
+    /*grid-column-start: 2;*/
+    
     
 }
 
@@ -130,6 +133,100 @@ h2 {
     font-weight: 900;
     text-align: center;
 }
+
+.boton {
+    background-color: #8cbc00;
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.5rem;
+   
+}
+
+.boton:hover{    
+    background-color: #769c02;
+    padding: 2rem;
+    font-size: 2rem;
+    
+    /*Propiedad CSS que genera una transicion entre las porpiedaddes
+    de un regla y la otras con un estado (por ejemplo :hover) lo 
+    transiciona son las propiedades difenrentes entre las reglas
+    .8 es el tiempo en decimas de segundo y edl ease-out*/
+    transition: all .8s ease-out;
+
+}
+
+.producto:hover {
+    transform: rotate(-1deg);
+    transform: scale(110%, 110%);
+    transition: all 0.5s ease;
+
+}
+
+.producto img {
+    object-fit: cover;
+}
+
+.producto :nth-child(1) img {
+    max-width: 70%;
+}
+
+
+.producto:nth-child(1) {
+    grid-area:p1;
+    display: flex;
+}
+.producto:nth-child(2) {grid-area:p2;}
+.producto:nth-child(3) {grid-area:p3;}
+.producto:nth-child(4) {grid-area:p4;}
+.producto:nth-child(5) {grid-area:p5;}
+.producto:nth-child(6) {grid-area:p6;}
+
+.listado-productos {
+    display:grid;
+    grid-template-areas:'p1 p1 p1 p1 p1 p1'
+                        'p2 p2 p2 p3 p3 p3'
+                        'p4 p4 p5 p5 p6 p6';
+    gap:2rem;
+}
+
+/*Lista enlaces*/
+
+.enlaces {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lista-enlaces a {
+    text-decoration: none;
+    display: block;
+    font-size: 1.5rem;
+    color: rgb(45, 44, 44);
+    margin-bottom: .8rem;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/*
+otra opcion de hacer el grid
+.listado-prodcutos{
+display: grid;
+grid-template-columns: repeat (6, 1fr);
+}
+
+.producto:nth-child(1) {
+grid-column: 1/ span 6;
+}
+Asi con las 6 columnas recuerad que hay una 7 que no se usa 
+para llegar a la columna final
+*/
+
 
 img {
     display: block; /* Quitamos el espaciado entre la img y el boton enlace*/
